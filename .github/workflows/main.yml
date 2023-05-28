@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - name: Fetch jenkins.war
+      run: curl -O http://mirrors.jenkins.io/war-stable/latest/jenkins.war
     - name: jenkinsfile-runner-prepackaged
       uses: jenkinsci/jenkinsfile-runner-github-actions/jenkinsfile-runner-prepackaged@master
       env:
